@@ -1,0 +1,36 @@
+{
+    "name": "nativephp/face-detection",
+    "version": "1.0.0",
+    "description": "A NativePHP Mobile plugin",
+    "namespace": "FaceDetection",
+    "bridge_functions": [
+        {
+            "name": "FaceDetection.Detect",
+            "android": "com.example.androidphp.bridge.plugins.FaceDetection.FaceDetectionFunctions.Detect",
+            "ios": "FaceDetectionFunctions.Detect",
+            "description": "Detect faces in an image"
+        },
+        {
+            "name": "FaceDetection.IsAvailable",
+            "android": "com.example.androidphp.bridge.plugins.FaceDetection.FaceDetectionFunctions.IsAvailable",
+            "ios": "FaceDetectionFunctions.IsAvailable",
+            "description": "Check if face detection is available"
+        }
+    ],
+    "permissions": {
+        "android": [],
+        "ios": []
+    },
+    "dependencies": {
+        "android": {
+            "implementation": ["com.google.mlkit:face-detection:16.1.7"]
+        },
+        "ios": {
+            "swift_packages": [],
+            "pods": ["GoogleMLKit/FaceDetection"]
+        }
+    },
+    "events": [
+        "Nativephp\\FaceDetection\\Events\\FaceDetectionCompleted"
+    ]
+}
